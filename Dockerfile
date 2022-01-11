@@ -5,10 +5,12 @@ FROM node:alpine
 WORKDIR /usr/app
 
 # Copying Local package from src local[./] to image local[./]
-COPY ./ ./
+COPY ./package.json ./
+
 # Running the Command
 RUN npm install
 
+COPY ./ ./
 # Starting Command
 CMD ["npm","start"]
 
